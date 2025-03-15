@@ -5,6 +5,63 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="A simple page for scavenger funt challenge">
 	<title>Scavenger Hunt Challenge</title>
+	<style>
+		/* Add a background image to the body */
+		body {
+			background-image: url('https://via.placeholder.com/1500'); /* Replace with you image URL */
+			background-size: cover; /* Make the background cover the entire page */
+			background-position: center; /* Center the background image */
+			background-attachment: fixed; /* Keep the background fixed while scrolling */
+			color: yellow; /* Yellow text color for better contrast */
+			font-family: sans-serif; /* Set a simple font */
+			margin: 0;
+			padding: 0;
+		}
+
+		header {
+			text-align: center;
+			padding: 20px;
+		}
+
+		main {
+			text-align: center;
+			padding: 20px;
+			background-color: rgba(0,0,0,0.5); /* Dark background with some transparency */
+			border-radius: 10px;
+			max-width: 800px;
+			margin: 0 auto;
+		}
+
+		footer {
+			text-align: center;
+			padding: 10px;
+			font-size: 0.8em;
+		}
+
+		input, button {
+			padding: 10px;
+			font-size: 1em;
+			margin-top: 10px
+		}
+
+		button {
+			background-color: #4CAF50; /* Green background */
+			color: yellow; /* Yello text color */
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		button:hover {
+			background-color: #45a049; /* Darker green on hover */
+		}
+
+		#errorMessage {
+			color: red;
+			display: none;
+			font-weight: bold;
+		}
+	</style>
 </head>
 <body>
 	<header>
