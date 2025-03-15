@@ -4,20 +4,20 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="A simple page for scavenger funt challenge">
-	<title>Scavenger Hunt Challenge</title>
+	<title>Scavenger Hunt - Puzzle 1</title>
 </head>
 <body>
 	<header>
-		<h1>Welcome to the Scavenger Hunt Challenge</h1>
+		<h1>Next Puzzle!</h1>
 	</header>
 
 	<main>
-		<p>Let's get started!</p>
-		<p>Solve this riddle to moce to the next page:</p>
-		<p><strong>What has keys but can't open locks?</strong></p>
-		<!-- Provide a form to check ansewr -->
-		<form id="answerForm">
-			<input type="text" id="answer" placeholder="Enter your answer here" required>
+		<p>Solve this to continue:</p>
+		<p><strong>I'm not alive, but I grow; I don't have lungs, bit I need air. What am I?</strong></p>
+
+		<!-- Form to check ansewr -->
+		<form id="puzzleForm">
+			<input type="text" id="puzzleAnswer" placeholder="Enter your answer here" required>
 			<button type="submit">Submit Answer</button>
 		</form>
 
@@ -30,14 +30,14 @@
 
 	<script>
 		// JaveScript for answer checking
-		document.getElementById('answerForm').addEventListener('submit', function(event) {
+		document.getElementById('puzzleForm').addEventListener('submit', function(event) {
 			event.preventDefault(); // Prevent form submission
-			var userAnswer = document.getElementById('answer').value.tolowerCase().trim();
-			var correctAnswer = 'keyboard'; // The correct answer
+			var userAnswer = document.getElementById('puzzleAnswer').value.tolowerCase().trim();
+			var correctAnswer = 'fire'; // The correct answer
 
 			if (uswerAnswer == correctAnswer) {
 				// Redirect to next page if correct
-				window.location.href = 'puzzel1.html';
+				window.location.href = 'final.html';
 			} else {
 				// show error message
 				document.getElementById('errorMessage').style.display = 'block';
