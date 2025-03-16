@@ -75,13 +75,6 @@
 			text-align: left;
 		}
 
-		.button-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px; /* Add space between buttons */
-            margin-top: 20px;
-        }
-		
 		.button {
             padding: 10px 20px;
             font-size: 16px;
@@ -89,7 +82,8 @@
             cursor: pointer;
             border: none;
             border-radius: 5px;
-			width: 150 px;
+			width: 200 px;
+			margin: 10px 0;
         }
         .yes {
             background-color: green;
@@ -135,13 +129,11 @@
 		</div>
 
 		<p><strong>What do you answer?</strong></p>
-		<div class="button-container">
-			<!-- Yes Button -->
-			<buttom class="button yes" onclick="window.location.href='sad_ending.html'">Yes</button>
+		<!-- Yes Button -->
+		<buttom class="button yes" onclick="window.location.href='sad_ending.html'">Yes</button>
 
-			<!-- No Button -->
-			<buttom class="button no" onclick="window.location.href='puzzle1.html'">No</button>
-		</div>
+		<!-- No Button -->
+		<buttom class="button no" onclick="window.location.href='puzzle1.html'">No</button>
 
 
 	<footer>
