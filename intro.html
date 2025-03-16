@@ -3,8 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="A simple page for scavenger funt challenge">
-	<title>Scavenger Hunt Challenge</title>
+	<meta name="description" content="intro page">
+	<title>An old friend</title>
 	<style>
 		/* Add a background image to the body */
 		body {
@@ -12,8 +12,8 @@
 			background-size: cover; /* Make the background cover the entire page */
 			background-position: center; /* Center the background image */
 			background-attachment: fixed; /* Keep the background fixed while scrolling */
-			color: yellow; /* Yellow text color for better contrast */
-			font-family: sans-serif; /* Set a simple font */
+			color: black; /* Yellow text color for better contrast */
+			font-family: serif; /* Set a simple font */
 			margin: 0;
 			padding: 0;
 		}
@@ -61,6 +61,19 @@
 			display: none;
 			font-weight: bold;
 		}
+
+		.speech-bubble {
+			max-width: 400px;
+			background: #f8f9fa;
+			padding: 15px;
+			border-radius: 10px;
+			border: 2px solid #ccc;
+			position: relative;
+			font-family: 'Arial', sans-serif;
+			font-size: 16px;
+			line-height: 1.5;
+			box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+		}
 	</style>
 </head>
 <body>
@@ -69,7 +82,15 @@
 	</header>
 
 	<main>
-		<p>under construction!</p>
+		<div class="speech-bubble">
+			<p>You come to visit your dear friend, Sniper Monkey, only to find him crying.</p>
+			<p>[Sniper Monkey]: sob sob... H... Hi Cobi, I'm sorry that you have to see me like this...</p>
+			<p>but...some real mean humans mugged me... and they took somehing of importnace from me...</p>
+			<p>My granpa's secret ...</p>
+			<p>Oh I shouldn't say...</p>
+			<p>Well, we are close friends, so I guess I can trust you.</p>
+		</div>
+
 		<p><strong>Passcode pls</strong></p>
 		<!-- Provide a form to check ansewr -->
 		<form id="answerForm">
@@ -93,7 +114,7 @@
 
 			if (userAnswer == correctAnswer) {
 				// Redirect to next page if correct
-				window.location.href = 'intro.html';
+				window.location.href = 'puzzel1.html';
 			} else {
 				// show error message
 				document.getElementById('errorMessage').style.display = 'block';
