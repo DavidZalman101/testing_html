@@ -111,21 +111,57 @@
 
 	<main>
 		<div class="speech-bubble">
-			<p>🐵: Here, I'll show you what's left of it, it should help us understand better where the treasure is.
+			<p>🐵: Here, I'll show you what's left of my map, it should help us understand better where the treasure is.
 		</div>
 		<p>
 			The map is indeed of Technion, but there are no arrows nor directions
 			But at the corner of the map, it says:
-				"At the begining, I stand with columns, and sketch the future,
-				 where concrete meets creation and a refreshment is cooler,
-				 you just might find your next adventure."
+		</p>
+		<p>
+			A place where shapes take form,
+			Where blueprints tell stories warm.
+			Future builders gather tight,
+			To craft the city's shining light.
+			
+			Not far, a bridge stands tall,
+			Beneath it, shadows fall.
+			Seek the glow in darkest night,
+			A numbered post—a guiding light.
+			
+			Find the number, note it well,
+			For it holds a tale to tell.
 		</p>
 
 		<div class="speech-bubble">
 			<p>🐵: "Ummm I wonder why someome would ruin such a nice map?..."</p>
 		<p>
+		</div>
 
-		<p><strong>What do you answer?</strong></p>
+		<p><strong>Insert number?</strong></p>
+
+		<form id="answerForm">
+			<input type="text" id="answer" placeholder="Enter your answer here" required>
+			<button type="submit">Submit Answer</button>
+		</form>
+
+		<div id="errorMessage" style="color: red; display: none;">wrong number.</div>
+
+	<script>
+		// JaveScript for answer checking
+		document.getElementById('answerForm').addEventListener('submit', function(event) {
+			event.preventDefault(); // Prevent form submission
+			var userAnswer = document.getElementById('answer').value.toLowerCase().trim();
+			var correctAnswer = '123123'; // The correct answer
+
+			if (userAnswer == correctAnswer) {
+				// Redirect to next page if correct
+				window.location.href = 'puzzle2.html';
+			} else {
+				// show error message
+				document.getElementById('errorMessage').style.display = 'block';
+			}
+		});
+	</script>
 		
 
 	<footer>
