@@ -3,46 +3,134 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="A simple page for scavenger funt challenge">
-	<title>Scavenger Hunt - Puzzle 1</title>
+	<meta name="description" content="Ripped map">
+	<title>Ripped map</title>
+	<style>
+		/* Add a background image to the body */
+		body {
+			background-image: url('technion_ripped_map.jpg'); /* local image*/
+			background-size: cover; /* Make the background cover the entire page */
+			background-position: center; /* Center the background image */
+			background-attachment: fixed; /* Keep the background fixed while scrolling */
+			color: black; /* Yellow text color for better contrast */
+			font-family: serif; /* Set a simple font */
+			margin: 0;
+			padding: 0;
+		}
+
+		header {
+			text-align: center;
+			padding: 20px;
+		}
+
+		main {
+			text-align: center;
+			padding: 20px;
+			background-color: rgba(0,0,0,0.5); /* Dark background with some transparency */
+			border-radius: 10px;
+			max-width: 800px;
+			margin: 0 auto;
+		}
+
+		footer {
+			text-align: center;
+			padding: 10px;
+			font-size: 0.8em;
+		}
+
+		input, button {
+			padding: 10px;
+			font-size: 1em;
+			margin-top: 10px
+		}
+
+		button {
+			background-color: #00EEFFE; /* light blue background */
+			color: yellow; /* Yello text color */
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		button:hover {
+			background-color: #0000FF; /* Darker Blue on hover */
+		}
+
+		#errorMessage {
+			color: red;
+			display: none;
+			font-weight: bold;
+		}
+
+		.speech-bubble {
+			max-width: 400px;
+			background: #f8f9fa;
+			padding: 15px;
+			border-radius: 10px;
+			border: 2px solid #ccc;
+			position: relative;
+			font-family: serif;
+			font-size: 16px;
+			line-height: 1.5;
+			box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+			text-align: left;
+		}
+
+        .button-container {
+            display: flex;
+            flex-direction: column; /* Stack buttons vertically */
+            gap: 15px; /* Adds space between buttons */
+            margin-top: 20px;
+        }
+
+        .button {
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 150px;
+            text-align: center;
+        }
+
+        .yes {
+            background-color: green;
+            color: white;
+        }
+
+        .no {
+            background-color: red;
+            color: white;
+        }
+	</style>
 </head>
 <body>
 	<header>
-		<h1>Next Puzzle!</h1>
+		<h1>Welcome to the Scavenger Hunt Challenge</h1>
 	</header>
 
 	<main>
-		<p>Solve this to continue:</p>
-		<p><strong>I'm not alive, but I grow; I don't have lungs, bit I need air. What am I?</strong></p>
+		<div class="speech-bubble">
+			<p>🐵: Here, I'll show you what's left of it, it should help us understand better where the treasure is.
+		</div>
+		<p>
+			The map is indeed of Technion, but there are no arrows nor directions
+			But at the corner of the map, it says:
+				"At the begining, I stand with columns, and sketch the future,
+				 where concrete meets creation and a refreshment is cooler,
+				 you just might find your next adventure."
+		</p>
 
-		<!-- Form to check ansewr -->
-		<form id="puzzleForm">
-			<input type="text" id="puzzleAnswer" placeholder="Enter your answer here" required>
-			<button type="submit">Submit Answer</button>
-		</form>
+		<div class="speech-bubble">
+			<p>🐵: "Ummm I wonder why someome would ruin such a nice map?..."</p>
+		<p>
 
-		<div id="errorMessage" style="color: red; display: none;">Oops! Try again.</div>
-	</main>
+		<p><strong>What do you answer?</strong></p>
+		
 
 	<footer>
 		<p>&copy; 2025 Scavenger Hunt. All rights reserved</p>
 	</footer>
 
-	<script>
-		// JaveScript for answer checking
-		document.getElementById('puzzleForm').addEventListener('submit', function(event) {
-			event.preventDefault(); // Prevent form submission
-			var userAnswer = document.getElementById('puzzleAnswer').value.toLowerCase().trim();
-			var correctAnswer = 'fire'; // The correct answer
-
-			if (userAnswer == correctAnswer) {
-				// Redirect to next page if correct
-				window.location.href = 'final.html';
-			} else {
-				// show error message
-				document.getElementById('errorMessage').style.display = 'block';
-			}
-		});
-	</script>
 </body>
 </html>
