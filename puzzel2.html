@@ -4,11 +4,11 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Ripped map">
-	<title>Ripped map</title>
+	<title>The Tall bridge where bunnies gather</title>
 	<style>
 		/* Add a background image to the body */
 		body {
-			background-image: url('technion_ripped_map.jpeg'); /* local image*/
+			background-image: url('technion_ripped_map.jpg'); /* local image*/
 			background-size: cover; /* Make the background cover the entire page */
 			background-position: center; /* Center the background image */
 			background-attachment: fixed; /* Keep the background fixed while scrolling */
@@ -111,33 +111,24 @@
 
 	<main>
 		<div class="speech-bubble">
-			<p>🐵: Here, I'll show you what's left of my map, it should help us understand better where the treasure is.
+			<p>🐵: Great Work!
+
+			Looks like an old code, ummm
+
+			aha! I remember papa primate used to forget his computer passcode all the time!
+			So he must have left this code here, so whenever he forgot it he could use it.
+
+			But I dont know where's he's computer...
+			It's been so so long that there's no way It would have been kept well.
+
+			Do you have any idea where papa primate's computer could be?
 		</div>
+
 		<p>
-			The map is indeed of Technion, but there are no arrows nor directions
-			But at the corner of the map, it says:
+			Find papa primate's compuer.
 		</p>
-		<p><strong><em style="color: darkblue;">
-			A place where shapes take form,
-			Where blueprints tell stories warm.
-			Future bunny builders gather tight,
-			To craft the city's shining light.
-			
-			Not far, a bridge stands tall,
-			Beneath it, shadows fall.
-			Seek the glow in darkest night,
-			A numbered post—a guiding light.
-			
-			Find the number, note it well,
-			For it holds a tale to tell.
-		</em></strong></p>
 
-		<div class="speech-bubble">
-			<p>🐵: "Ummm I wonder why someome would ruin such a nice map?..."</p>
-		<p>
-		</div>
-
-		<p><strong>Insert number?</strong></p>
+		<p><strong>What is the computers model name and number?</strong></p>
 
 		<form id="answerForm">
 			<input type="text" id="answer" placeholder="Enter your answer here" required>
@@ -151,7 +142,7 @@
 		document.getElementById('answerForm').addEventListener('submit', function(event) {
 			event.preventDefault(); // Prevent form submission
 			var userAnswer = document.getElementById('answer').value.toLowerCase().trim();
-			var correctAnswer = '123123'; // The correct answer
+			var correctAnswer = 'MAC1'; // The correct answer
 
 			if (userAnswer == correctAnswer) {
 				// Redirect to next page if correct

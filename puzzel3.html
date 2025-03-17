@@ -4,11 +4,11 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Ripped map">
-	<title>Ripped map</title>
+	<title>The Tall bridge where bunnies gather</title>
 	<style>
 		/* Add a background image to the body */
 		body {
-			background-image: url('technion_ripped_map.jpeg'); /* local image*/
+			background-image: url('pp_pc.jpg'); /* local image*/
 			background-size: cover; /* Make the background cover the entire page */
 			background-position: center; /* Center the background image */
 			background-attachment: fixed; /* Keep the background fixed while scrolling */
@@ -102,6 +102,11 @@
             background-color: red;
             color: white;
         }
+
+		.old-pc-font {
+			font-family: Courier;
+			color: green;
+		}
 	</style>
 </head>
 <body>
@@ -111,36 +116,23 @@
 
 	<main>
 		<div class="speech-bubble">
-			<p>🐵: Here, I'll show you what's left of my map, it should help us understand better where the treasure is.
+			<p>🐵: Wow! this is a computer? Mines thin and shiny.
+			</p>
 		</div>
-		<p>
-			The map is indeed of Technion, but there are no arrows nor directions
-			But at the corner of the map, it says:
+
+		<p class="old-pc-font">User:
+		Password:
 		</p>
-		<p><strong><em style="color: darkblue;">
-			A place where shapes take form,
-			Where blueprints tell stories warm.
-			Future bunny builders gather tight,
-			To craft the city's shining light.
-			
-			Not far, a bridge stands tall,
-			Beneath it, shadows fall.
-			Seek the glow in darkest night,
-			A numbered post—a guiding light.
-			
-			Find the number, note it well,
-			For it holds a tale to tell.
-		</em></strong></p>
 
-		<div class="speech-bubble">
-			<p>🐵: "Ummm I wonder why someome would ruin such a nice map?..."</p>
-		<p>
-		</div>
-
-		<p><strong>Insert number?</strong></p>
+		<p><strong>Insert Username and Password:</strong></p>
 
 		<form id="answerForm">
-			<input type="text" id="answer" placeholder="Enter your answer here" required>
+			<input type="text" id="answer" placeholder="Enter username here" required>
+			<button type="submit">Submit Answer</button>
+		</form>
+
+		<form id="answerForm2">
+			<input type="text" id="answer2" placeholder="Eneter password here" required>
 			<button type="submit">Submit Answer</button>
 		</form>
 
@@ -151,11 +143,13 @@
 		document.getElementById('answerForm').addEventListener('submit', function(event) {
 			event.preventDefault(); // Prevent form submission
 			var userAnswer = document.getElementById('answer').value.toLowerCase().trim();
-			var correctAnswer = '123123'; // The correct answer
+			var userAnswer2 = document.getElementById('answer2').value.toLowerCase().trim();
+			var correctAnswer = 'papa primate'; // The correct answer
+			var correctAnswer2 = '123123'; // The correct answer
 
-			if (userAnswer == correctAnswer) {
+			if (userAnswer == correctAnswer && userAnswer2 == correctAnswer2) {
 				// Redirect to next page if correct
-				window.location.href = 'puzzle2.html';
+				window.location.href = 'puzzle4.html';
 			} else {
 				// show error message
 				document.getElementById('errorMessage').style.display = 'block';
