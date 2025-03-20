@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Ripped map">
+	<style>
+		/* Add a background image to the body */
+		body {
+			background-image: url('pp_old_pc.jpg'); /* local image*/
+			background-size: cover; /* Make the background cover the entire page */
+			background-position: center; /* Center the background image */
+			background-attachment: fixed; /* Keep the background fixed while scrolling */
+			color: black; /* Yellow text color for better contrast */
+			font-family: serif; /* Set a simple font */
+			margin: 0;
+			padding: 0;
+		}
+
+		header {
+			text-align: center;
+			padding: 20px;
+		}
+
+		main {
+			text-align: center;
+			padding: 20px;
+			background-color: rgba(0,0,0,0.5); /* Dark background with some transparency */
+			border-radius: 10px;
+			max-width: 800px;
+			margin: 0 auto;
+		}
+
+		footer {
+			text-align: center;
+			padding: 10px;
+			font-size: 0.8em;
+		}
+
+		input, button {
+			padding: 10px;
+			font-size: 1em;
+			margin-top: 10px
+		}
+
+		button {
+			background-color: #00EEFFE; /* light blue background */
+			color: yellow; /* Yello text color */
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		button:hover {
+			background-color: #0000FF; /* Darker Blue on hover */
+		}
+
+		#errorMessage {
+			color: red;
+			display: none;
+			font-weight: bold;
+		}
+
+		.speech-bubble {
+			max-width: 400px;
+			background: #f8f9fa;
+			padding: 15px;
+			border-radius: 10px;
+			border: 2px solid #ccc;
+			position: relative;
+			font-family: serif;
+			font-size: 16px;
+			line-height: 1.5;
+			box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+			text-align: left;
+		}
+
+        .button-container {
+            display: flex;
+            flex-direction: column; /* Stack buttons vertically */
+            gap: 15px; /* Adds space between buttons */
+            margin-top: 20px;
+        }
+
+        .button {
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 150px;
+            text-align: center;
+        }
+
+        .yes {
+            background-color: green;
+            color: white;
+        }
+
+        .no {
+            background-color: red;
+            color: white;
+        }
+
+		.old-pc-font {
+			font-family: Courier;
+			color: green;
+		}
+	</style>
+</head>
+<body>
+	<main>
+	<p>
+		The Computer turns on and starts outputing text on the screen
+	</p>
+		<p class="old-pc-font">Loading bash terminal...
+
+		Welcome back Papa Primate!
+
+		~/home/: $ 
+		</p>
+
+		<div class="speech-bubble">
+			<p>🐵: cool this is papa primate's computer! I bet it has usful files in it!
+
+			But this is a bash terminal... I like GUI macbook stuff with the colorful circle when loading.
+
+			I wounder if there is something like a book which could help up <strong>list</strong> all the files.
+			</p>
+		</div>
+
+		<form id="answerForm">
+			<input type="text" id="answer2" placeholder="Enter command word here" required>
+			<p></p>
+			<button type="submit">Submit Answer</button>
+		</form>
+
+		<div id="errorMessage" style="color: red; display: none;">Bash: err: command not found, maybe look up what you want to do, or read a great book.</div>
+	
+
+	<script>
+		// JaveScript for answer checking
+		document.getElementById('answerForm2').addEventListener('submit', function(event) {
+			event.preventDefault(); // Prevent form submission
+			var userAnswer = document.getElementById('answer').value.toLowerCase().trim();
+			var correctAnswer = 'ls'; // The correct answer
+
+			if (userAnswer == correctAnswer2) {
+				// Redirect to next page if correct
+				window.location.href = 'puzzle5.html';
+			} else {
+				// show error message
+				document.getElementById('errorMessage').style.display = 'block';
+			}
+		});
+	</script>
+		
+
+	<footer>
+		<p>&copy; 2025 Scavenger Hunt. All rights reserved</p>
+	</footer>
+
+</body>
+</html>
