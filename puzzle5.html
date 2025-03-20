@@ -144,6 +144,7 @@
 			var userAnswer = document.getElementById('answer').value.toLowerCase().trim();
 			var Main_answer = 'main.java';
 			var secret_pic_answer = 'secret_pic.jpeg';
+			var hint_if_i_forget_answer = 'hint_if_i_forget.txt';
 
 			if (userAnswer == Main_answer) {
 				// Redirect to next page if correct
@@ -151,6 +152,9 @@
 			} else if (userAnswer == secret_pic_answer){
 				// Redirect to next page if correct
 				window.location.href = 'secret_pic.html';
+			} else if (userAnswer == hint_if_i_forget_answer) {
+				// Redirect to next page if correct
+				window.location.href = 'puzzle6.html';
 			} else {
 				// show error message
 				document.getElementById('errorMessage').style.display = 'block';
