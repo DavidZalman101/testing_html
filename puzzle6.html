@@ -114,22 +114,29 @@
 	</p>
 		<p class="old-pc-font"><b>
 		~/home/: $ ls<br><br>
+		~/home/: $ cat hint_if_i_forget.txt<br><br>
 
-		Main.java<br>
-		hint_if_i_forget.txt<br>
-		secret_pic.jpeg<br>
-		mama_primate_dish_recpie.txt<br>
+		<i>
+		Once, beneath open skies and scattered light,<br>
+		You spoke of dreams that felft just right.<br>
+		Number logic and computers, a path you chose,<br>
+		Now seek the place where knowledge grows.<br><br>
+		Stand where you once make your choice so bold,<br>
+		Turn to the seats, count rows untold.<br>
+		From the center, take careful stride,<br>
+		The clue you seek is tucked inside<br>
+		</i>
+
 
 		</b></p>
 
 		<div class="speech-bubble">
-			<p>🐵: wow you're pretty smart!<br>
-			Umm I dont know if I feel right opening those files... maybe just a quick looksy...
+			<p>🐵: ummm fancy words.
 			</p>
 		</div>
 
 		<form id="answerForm">
-			<input type="text" id="answer" placeholder="Enter file name" required>
+			<input type="text" id="answer" placeholder="Enter something" required>
 			<p></p>
 			<button type="submit">Enter</button>
 		</form>
@@ -142,15 +149,10 @@
 		document.getElementById('answerForm').addEventListener('submit', function(event) {
 			event.preventDefault(); // Prevent form submission
 			var userAnswer = document.getElementById('answer').value.toLowerCase().trim();
-			var Main_answer = 'main.java';
-			var secret_pic_answer = 'secret_pic.jpeg';
 
 			if (userAnswer == Main_answer) {
 				// Redirect to next page if correct
-				window.location.href = 'Main_java.html';
-			} else if (userAnswer == secret_pic_answer){
-				// Redirect to next page if correct
-				window.location.href = 'secret_pic.html';
+				window.location.href = 'puzzle7.html';
 			} else {
 				// show error message
 				document.getElementById('errorMessage').style.display = 'block';
