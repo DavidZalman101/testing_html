@@ -130,9 +130,9 @@
 		</div>
 
 		<form id="answerForm">
-			<input type="text" id="answer" placeholder="Enter command word here" required>
+			<input type="text" id="answer" placeholder="Enter file name" required>
 			<p></p>
-			<button type="submit">Enter here what file to open</button>
+			<button type="submit">Enter</button>
 		</form>
 
 		<div id="errorMessage" style="color: red; display: none;">Bash: err: file does not exist.</div>
@@ -143,7 +143,7 @@
 		document.getElementById('answerForm').addEventListener('submit', function(event) {
 			event.preventDefault(); // Prevent form submission
 			var userAnswer = document.getElementById('answer').value.toLowerCase().trim();
-			var Main_answer= 'Main.java';
+			var Main_answer = 'Main.java';
 			var intro_to_cs_hw1_answer = 'into_to_cs_hw1.c';
 			var hint_if_i_forget_answer = 'hint_if_i_forget_anwer.txt';
 			var secret_pic_answer= 'secret_pic.jpg';
