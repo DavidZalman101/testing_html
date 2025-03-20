@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Ripped map">
+</head>
+<body>
+/**
+  main
+ */
+import java.util.Random;
+
+public class Main {
+    public static void main(String[] args) {
+            System.out.println("Welcome, let's test your code");
+
+             // Create a new linked list
+             LinkedList list1 = new LinkedList();
+             LinkedList list2 = new LinkedList();
+             
+             // Append nodes to the list1
+             for (int i = 0; i < 10; i++) {
+                 list1.append(5);
+             }
+     
+             // Append nodes to the list2
+             for (int i = 0; i < 5; i++) {
+                 list2.append(5);
+             }
+     
+             // Find the nine-th node from list1
+             Node secret_node = list1.getNinthNode();
+     
+             // Append the secret node to list2
+             list2.appendNode(secret_node);
+     
+             Node cobis_node = solve(list1, list2);
+     
+             if (secret_node == cobis_node)
+             {
+                 System.out.println("Good Job Big Brain");
+             }
+             else
+             {
+                 System.out.println("try again stupid pppopo!");
+             }
+         }
+         public static Node solve(LinkedList list1, LinkedList list2)
+         {
+             // COBI NEEDS TO COMPLETE THIS METHOD
+             /*
+              *  list1 and list2 are both LinkedLists, can read about them 
+              * in their .java files... dont have to 
+              * 
+              * 
+              * Mission: Find and return the node with list1 and list2 meet
+              * 
+              */
+            //return null;
+            
+            //i want to find where the combine, if one list bigger than other, definitely not the "extra"
+
+            //how to check size? use for loop and make a counter? not efficient. start from head
+            
+            int counter1 = 0; //to get length of list
+            int counter2 = 0; //to get length of list
+
+            Node current1 = list1.head; // need start of the lists but how dafuq
+            while(current1 != null){    //if the list isnt empty
+                current1 = current1.getNext();     //move along and ocunt them up
+                counter1++;
+            }
+
+            Node current2 = list2.head; // need start of the lists but how dafuq
+            while(current2 != null){     //if the list isnt empty
+                current2 = current2.getNext();  
+                counter2++;              //move along and ocunt them up
+            }
+
+            int diff = Math.abs(counter1 - counter2); 
+            
+            Node itrL= null;
+            Node itrS = null;
+            //find the longer list and move along the diff from it
+            
+            if(counter1 < counter2){  //list2 longer
+                //loop ahead diff amoutn of nodes?
+                itrL = list2.head;
+                itrS = list1.head;
+                
+            } else if(counter1 > counter2){ // list1 longer
+                itrL = list1.head;
+                itrS = list2.head;
+               
+            }
+            else{ //lists same length
+                itrL = list2.head;
+                itrS = list1.head;
+            }
+            for(int i = 0; i < diff ; i++){ 
+                itrL = itrL.getNext();
+            }
+            //now compare each address? another while loop? (while cause idk the expected length?)
+            //"index" of linked list - placement 
+            while(itrL != itrS){
+                itrS = itrS.getNext();
+                itrL = itrL.getNext();
+            }
+            return itrS;
+         }
+
+         //make a new list using Random
+         public static LinkedList createList(Node chainLen){
+            Random rnd = new Random();
+            Node list = new Node(0); //decide lenght
+            Node prev, next;
+            prev = list;
+            //create new and make another length amount
+            for(int i =0; i < chainLen; i++){
+                //put the new link at the end each time
+                next = new Node(i);
+                prev.setNext(next);
+                prev = next; // update new end
+            }
+
+         }
+}
+
+/*****************************************************************************************/
+//PRACTICE-> returns lowest VALUE in the array
+public static int min(int [] a){
+    //send to method to find lowest
+    return min(a, 0); //need a ptr for the idx ->set which idx is sent from here
+    // a[idx] means return value of whats is array in cell idx
+}
+//sends to private to recursively go through each sub array
+private static int min(int [] a, int idx){ //compare curr to next -> smaller
+    //stopping condition -> end/past end
+    if(idx == a.length-1){ //if we made it to the last one, must be min
+        return a[idx];
+    }
+    //current case -> check list
+    int restMin = min(a,idx+1); //call to move along
+    if(a[idx] < restMin){
+        //if holds, rest and compare again
+        return a[idx]; // we found the min
+    }
+    //otherwise the restMin has the min?
+    //recursive call to check the rest of the array
+    return restMin; 
+}
+/*****************************************************************************************/
+//PRACTICE-> returns INDEX of lowest value in the array
+public static int minIdx(int [] a){
+    return minIdx(a, 0); //send array and starting index
+}
+//sends to private to recursively go through each sub array
+private static int minIdx(int []a , int idx){
+    //default -> only one cell -> tis lowest 
+    if(idx == a.length-1){
+        //were reduced to this case or its the last cell?
+        //we want to return the CELL not value -> return just idx 
+        return idx;
+    }
+    //check lowest value again -> or its here or in the rest
+    //recursive caller
+    int inRest = minIdx(a, idx+1); // move to next idx and from thta sub array
+    //this or rest
+    if(a[idx] < inRest){
+        return idx; // found min, its here, return this current idx
+    }
+    //else its in the rest so resend all this starting from the rest
+    return inRest;
+ }
+/*****************************************************************************************/
+ //PRACTICE-> makes an array into a string (with spaces between each letter)
+ public static String arrToString(int [] a){
+    //send to private with params -> array, idx, string to add to?
+    return arrToString(a, 0, "");
+ }
+ private static String arrToString(int []a , int idx, String st){
+    //default case empty or one cell? -> maneuvering with idx
+    if(idx == a.length-1){ //if is empty or only one, make that cell content to be the string
+        return st + a[idx]; // does this add the content to a string?
+    }
+    // rest of the array? go in order? move along now or after?
+    int restArr = arrToString(a, idx + 1, st + a[idx]); //add to string too? or did i double somehting here?
+    //add together
+    //wait this is done no?
+    return a[idx] + " " + restArr;
+ }
+ /*****************************************************************************************/
+ //PRACTICE-> returns a string of the content of the array in REVERSE order
+ //ideas->start from a.length-1 and reduce? then it would return then baclwards? -> lets try
+ public static String reversed(int [] a){
+    //send with params of array and idx from the end
+    return reversed(a, a.length-1); 
+ }
+ private static String reversed(int []a, int idx){
+    //default-> shortest case just return it
+    if(idx == 0){ //zero cause were going other way?
+        return a[idx] + " ";
+    }
+    //recursive move -> what we want to repeat on
+    String back = reversed(a, idx - 1);
+    //we're done -> return this
+    return back + " " + a[idx]; //return what we got
+ }
+ /*****************************************************************************************/
+ //PRACTICE-> check if given array is a palindrome -> check 1st and last match and move inwards
+ public static boolean isPalindrome(int [] a){
+    //send with two idx-> beginning and end 
+    return isPalidrome(a, 0, a.length-1);
+ }                                                                            
+ private static boolean isPalindrome(int [] a, int left, int right){
+    //if 0 or 1 long -> return true?
+    if(a.length-1 == 1){
+        return true;
+    }
+    //part to check if they match 
+    if(left = right){ //one equal since checking value not address
+        //recursively call to keep checking -> go inward
+        return isPalindrome(a, left +1, right -1);
+    }
+    // else not -> bad return false;
+    return false;
+ }
+ <p>
+
+
+</p>
+</body>
+</html>

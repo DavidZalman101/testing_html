@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Ripped map">
+	<style>
+		/* Add a background image to the body */
+		body {
+			background-image: url('pp_old_pc.jpg'); /* local image*/
+			background-size: cover; /* Make the background cover the entire page */
+			background-position: center; /* Center the background image */
+			background-attachment: fixed; /* Keep the background fixed while scrolling */
+			color: black; /* Yellow text color for better contrast */
+			font-family: serif; /* Set a simple font */
+			margin: 0;
+			padding: 0;
+		}
+
+		header {
+			text-align: center;
+			padding: 20px;
+		}
+
+		main {
+			text-align: center;
+			padding: 20px;
+			background-color: rgba(0,0,0,0.5); /* Dark background with some transparency */
+			border-radius: 10px;
+			max-width: 800px;
+			margin: 0 auto;
+		}
+
+		footer {
+			text-align: center;
+			padding: 10px;
+			font-size: 0.8em;
+		}
+
+		input, button {
+			padding: 10px;
+			font-size: 1em;
+			margin-top: 10px
+		}
+
+		button {
+			background-color: #00EEFFE; /* light blue background */
+			color: yellow; /* Yello text color */
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		button:hover {
+			background-color: #0000FF; /* Darker Blue on hover */
+		}
+
+		#errorMessage {
+			color: red;
+			display: none;
+			font-weight: bold;
+		}
+
+		.speech-bubble {
+			max-width: 400px;
+			background: #f8f9fa;
+			padding: 15px;
+			border-radius: 10px;
+			border: 2px solid #ccc;
+			position: relative;
+			font-family: serif;
+			font-size: 16px;
+			line-height: 1.5;
+			box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+			text-align: left;
+		}
+
+        .button-container {
+            display: flex;
+            flex-direction: column; /* Stack buttons vertically */
+            gap: 15px; /* Adds space between buttons */
+            margin-top: 20px;
+        }
+
+        .button {
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 150px;
+            text-align: center;
+        }
+
+        .yes {
+            background-color: green;
+            color: white;
+        }
+
+        .no {
+            background-color: red;
+            color: white;
+        }
+
+		.old-pc-font {
+			font-family: Courier;
+			color: green;
+		}
+	</style>
+</head>
+<body>
+	<main>
+	<p>
+		The computer outputs the following lines:
+	</p>
+		<p class="old-pc-font"><b>
+		~/home/: $ ls
+
+		Main.java<br>
+		into_to_cs_hw1.c<br>
+		hint_if_i_forget.txt<br>
+		secret_pic.jpg<br>
+		mama_primate_dish_recpie.txt<br>
+
+		</b></p>
+
+		<div class="speech-bubble">
+			<p>🐵: wow you're pretty smart!<br>
+			Umm I dont know if I feel right opening those files... maybe just a quick looksy...
+			</p>
+		</div>
+
+		<form id="answerForm">
+			<input type="text" id="answer" placeholder="Enter command word here" required>
+			<p></p>
+			<button type="submit">Enter here what file to open</button>
+		</form>
+
+		<div id="errorMessage" style="color: red; display: none;">Bash: err: file does not exist.</div>
+	
+
+	<script>
+		// JaveScript for answer checking
+		document.getElementById('answerForm').addEventListener('submit', function(event) {
+			event.preventDefault(); // Prevent form submission
+			var userAnswer = document.getElementById('answer').value.toLowerCase().trim();
+			var Main_answer= 'Main.java';
+			var intro_to_cs_hw1_answer = 'into_to_cs_hw1.c';
+			var hint_if_i_forget_answer = 'hint_if_i_forget_anwer.txt';
+			var secret_pic_answer= 'secret_pic.jpg';
+			var mama_primate_dish_recpie.answer = 'mama_primate_dish_recpie.txt';
+
+			if (userAnswer == Main_answer) {
+				// Redirect to next page if correct
+				window.location.href = 'Main_java.html';
+			} else {
+				// show error message
+				document.getElementById('errorMessage').style.display = 'block';
+			}
+		});
+	</script>
+		
+
+	<footer>
+		<p>&copy; 2025 Scavenger Hunt. All rights reserved</p>
+	</footer>
+
+</body>
+</html>
