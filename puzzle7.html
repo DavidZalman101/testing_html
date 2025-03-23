@@ -7,6 +7,7 @@
 	<style>
 		/* Add a background image to the body */
 		body {
+			background-image: url('diploma.jpg'); /* local image*/
 			background-size: cover; /* Make the background cover the entire page */
 			background-position: center; /* Center the background image */
 			background-attachment: fixed; /* Keep the background fixed while scrolling */
@@ -112,24 +113,33 @@
 	<p>
 		The computer outputs the following lines:
 	</p>
-		<p class="old-pc-font"><b>
-		~/home/: $ ls<br><br>
-
-		Main.java<br>
-		hint_if_i_forget.txt<br>
-		secret_pic.jpeg<br>
-        secret.link<br>
-
-		</b></p>
-
 		<div class="speech-bubble">
-			<p>🐵: wow you're pretty smart!<br>
-			Umm I dont know if I feel right opening those files... maybe just a quick looksy...
+			<p>🐵: wow! you found papa primate's diploma?!<br>
+                   And look at that, there's a note.
 			</p>
 		</div>
+    
+		<i>
+        Hey prime,<br>
+        Heard you got a prize for finishing your CS degree with excellence.<br>
+        Maybe you'd like me to give you another prize...<br>
+        Where?<br><br>
+        "Week after week, where the patties sizzle and stories flow,<br>
+         A bench stands waiting, as you already know.<br>
+         In front of the place where circuits connect,<br>
+         Find your next clue -- go on, reflect!"<br>
+         See you soon<br>
+         XOXO "Monkey Mystique"💋<br>
+		</i>
+
+		<div class="speech-bubble">
+			<p>🙊: . . .<br>
+			</p>
+		</div>
+    
 
 		<form id="answerForm">
-			<input type="text" id="answer" placeholder="Enter file name" required>
+			<input type="text" id="answer" placeholder="Enter what's under the bench?" required>
 			<p></p>
 			<button type="submit">Enter</button>
 		</form>
@@ -142,22 +152,11 @@
 		document.getElementById('answerForm').addEventListener('submit', function(event) {
 			event.preventDefault(); // Prevent form submission
 			var userAnswer = document.getElementById('answer').value.toLowerCase().trim();
-			var Main_answer = 'main.java';
-			var secret_pic_answer = 'secret_pic.jpeg';
-			var hint_if_i_forget_answer = 'hint_if_i_forget.txt';
-            var secret_link_answer = 'secret.link';            
+            var Main_answer = 'ewq';
 
 			if (userAnswer == Main_answer) {
 				// Redirect to next page if correct
-				window.location.href = 'Main_java.html';
-			} else if (userAnswer == secret_pic_answer){
-				// Redirect to next page if correct
-				window.location.href = 'secret_pic.html';
-			} else if (userAnswer == hint_if_i_forget_answer) {
-				// Redirect to next page if correct
-				window.location.href = 'puzzle6.html';
-            } else if (userAnswer == secret_link_answer) {
-                window.location.href = 'https://www.youtube.com/watch?v=ifaoKZfQpdA';
+				window.location.href = 'puzzle8.html';
 			} else {
 				// show error message
 				document.getElementById('errorMessage').style.display = 'block';
