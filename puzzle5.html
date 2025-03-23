@@ -119,6 +119,7 @@
 		hint_if_i_forget.txt<br>
 		secret_pic.jpeg<br>
 		mama_primate_dish_recpie.txt<br>
+        secret.link<br>
 
 		</b></p>
 
@@ -145,6 +146,7 @@
 			var Main_answer = 'main.java';
 			var secret_pic_answer = 'secret_pic.jpeg';
 			var hint_if_i_forget_answer = 'hint_if_i_forget.txt';
+            var secret_link_answer = 'secret.link';            
 
 			if (userAnswer == Main_answer) {
 				// Redirect to next page if correct
@@ -155,6 +157,8 @@
 			} else if (userAnswer == hint_if_i_forget_answer) {
 				// Redirect to next page if correct
 				window.location.href = 'puzzle6.html';
+            } else if (userAnswer == secret_link_answer) {
+                window.location.href = 'https://www.youtube.com/watch?v=ifaoKZfQpdA';
 			} else {
 				// show error message
 				document.getElementById('errorMessage').style.display = 'block';
