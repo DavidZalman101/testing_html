@@ -7,6 +7,7 @@
 	<style>
 		/* Add a background image to the body */
 		body {
+			background-image: url('pp_old_pc.jpg'); /* local image*/
 			background-size: cover; /* Make the background cover the entire page */
 			background-position: center; /* Center the background image */
 			background-attachment: fixed; /* Keep the background fixed while scrolling */
@@ -62,7 +63,35 @@
 
 		.speech-bubble {
 			max-width: 400px;
-			background: #f8f9fa;
+			background: #f4daff;
+			padding: 15px;
+			border-radius: 10px;
+			border: 2px solid #ccc;
+			position: relative;
+			font-family: serif;
+			font-size: 16px;
+			line-height: 1.5;
+			box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+			text-align: left;
+		}
+
+		.black-bubble {
+			max-width: 400px;
+			background: #000000;
+			padding: 15px;
+			border-radius: 10px;
+			border: 2px solid #ccc;
+			position: relative;
+			font-family: serif;
+			font-size: 16px;
+			line-height: 1.5;
+			box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+			text-align: left;
+		}
+
+		.i-bubble {
+			max-width: 400px;
+			background: #ffffff;
 			padding: 15px;
 			border-radius: 10px;
 			border: 2px solid #ccc;
@@ -105,20 +134,33 @@
 			font-family: Courier;
 			color: green;
 		}
+
+		.old-pc-font {
+			font-family: Courier;
+			color: green;
+		}
+
+		.i_old-pc-font {
+			font-family: Courier;
+			color: white;
+		}
+
 	</style>
 </head>
 <body>
 	<main>
-	<p>
-		The computer outputs the following lines:
-	</p>
+
+	<div id="black-bubble">
+		<p class="i_old-pc-font">
+		The computer outputs the following lines:<br><br>
+		</p>
 		<p class="old-pc-font"><b>
 		~/home/: $ ls<br><br>
-
 		Main.java<br>
 		hint_if_i_forget.txt<br>
 		secret_pic.jpeg<br>
         secret.link<br>
+	</div>
 
 		</b></p>
 
@@ -135,7 +177,16 @@
 		</form>
 
 		<div id="errorMessage" style="color: red; display: none;">Bash: err: file does not exist.</div>
-	
+
+
+	<audio id="bgMusic" src="pp_pc_boot.mp3" autoplay></dudio>
+
+	<script>
+	    window.addEventListener("load", function () {
+	        let sound = new Audio("pp_pc_boot.mp3");
+	        sound.play().catch(error => console.log("Autoplay blocked:", error));
+	    });
+	</script>
 
 	<script>
 		// JaveScript for answer checking
