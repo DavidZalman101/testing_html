@@ -45,7 +45,7 @@
 
 		button {
 			background-color: #00EEFFE; /* light blue background */
-			color: yellow; /* Yello text color */
+			color: black;
 			border: none;
 			border-radius: 5px;
 			cursor: pointer;
@@ -63,7 +63,35 @@
 
 		.speech-bubble {
 			max-width: 400px;
-			background: #f8f9fa;
+			background: #f4daff;
+			padding: 15px;
+			border-radius: 10px;
+			border: 2px solid #ccc;
+			position: relative;
+			font-family: serif;
+			font-size: 16px;
+			line-height: 1.5;
+			box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+			text-align: left;
+		}
+
+		.black-bubble {
+			max-width: 400px;
+			background: #000000;
+			padding: 15px;
+			border-radius: 10px;
+			border: 2px solid #ccc;
+			position: relative;
+			font-family: serif;
+			font-size: 16px;
+			line-height: 1.5;
+			box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+			text-align: left;
+		}
+
+		.i-bubble {
+			max-width: 400px;
+			background: #ffffff;
 			padding: 15px;
 			border-radius: 10px;
 			border: 2px solid #ccc;
@@ -113,11 +141,13 @@
 	<p>
 		The Computer turns on and starts outputing text on the screen
 	</p>
+		<div id="black-bubble">
 		<p class="old-pc-font"><b>Loading bash terminal...<br>
 		Welcome back Papa Primate!
 		<br>
 		~/home/: $ 
 		</b></p>
+		</div>
 
 		<div class="speech-bubble">
 			<p>🐵: cool this is papa primate's computer! I bet it has usful files in it!
@@ -136,6 +166,14 @@
 
 		<div id="errorMessage" style="color: red; display: none;">Bash: err: command not found, maybe look up what you want to do, or read a great book.</div>
 	
+	<audio id="bgMusic" src="pp_pc_boot.mp3" autoplay></dudio>
+
+	<script>
+	    window.addEventListener("load", function () {
+	        let sound = new Audio("pp_pc_boot.mp3");
+	        sound.play().catch(error => console.log("Autoplay blocked:", error));
+	    });
+	</script>
 
 	<script>
 		// JaveScript for answer checking
