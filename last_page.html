@@ -151,6 +151,26 @@
 			font-family: Courier;
 			color: green;
 		}
+
+        .image-container {
+            position: absolute;
+            width: 100px; /* Small image size */
+            height: 100px;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px; /* Optional: rounded corners */
+            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+        }
+
+		.img0 { top: 50px; left: 100px; }
+		.img1 { top: 200px; left: 300px; }
+		.img2 { top: 350x; left: 500px; }
+		.img3 { top: 150px; left: 600px; }
+		
 	</style>
 </head>
 <body>
@@ -159,13 +179,22 @@
 			<p>🐵: wow, I guess the real treasure that papa primate had was his great life and memories.</p>
 		</div>
 
-		<form id="answerForm">
-			<input type="text" id="answer" placeholder="Enter answer" required>
-			<p></p>
-			<button type="submit">Enter</button>
-		</form>
+		<div class="image-container img0">
+			<img src="pic0.jpeg" alt="Image 0">
+		<div>
 
-		<div id="errorMessage" style="color: red; display: none;">Bash: err: file does not exist.</div>
+		<div class="image-container img1">
+			<img src="pic1.jpeg" alt="Image 1">
+		<div>
+
+		<div class="image-container img2">
+			<img src="pic2.jpeg" alt="Image 2">
+		<div>
+
+		<div class="image-container img3">
+			<img src="pic3.jpeg" alt="Image 3">
+		<div>
+
 	
 	<footer>
 		<p>&copy; 2025 Scavenger Hunt. All rights reserved</p>
