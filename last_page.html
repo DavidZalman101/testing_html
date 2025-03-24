@@ -267,6 +267,15 @@
 
 	<audio id="bgMusic" src="last_page_song.mp3" autoplay></audio>
 
+<script>
+    // Make sure the audio is only played once
+    window.onload = function() {
+        const bgMusic = document.getElementById('bgMusic');
+        bgMusic.play(); // Ensures the song plays only once after the page loads
+    };
+</script>
+
+
 
 
 	<footer>
