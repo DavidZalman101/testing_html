@@ -185,13 +185,17 @@
 		document.getElementById('answerForm').addEventListener('submit', function(event) {
 			event.preventDefault(); // Prevent form submission
 			var userAnswer = document.getElementById('answer').value.toLowerCase().trim();
+			var readmeAnswer = 'readme.txt'
 			var Main_answer = 'main.java';
 			var secret_pic_answer = 'secret_pic.jpeg';
 			var hint_if_i_forget_answer = 'hint_if_i_forget.txt';
             var secret_link_answer = 'secret.link';            
 			var my_review_answer = 'my_review_on_blonde_cs_student.mp3';
 
-			if (userAnswer == Main_answer) {
+			if (userAnswer == readmeAnswer) {
+				// Redirect to next page if correct
+				window.location.href = 'readme.html';
+			} else if (userAnswer == Main_answer) {
 				// Redirect to next page if correct
 				window.location.href = 'Main_java.html';
 			} else if (userAnswer == secret_pic_answer){
