@@ -157,7 +157,7 @@
 		</div>
 		<br><br>
 		<div class="q-bubble">
-		<p>What is the computers model name and number?</p>
+		<p>write the computers name/model. And append to it the right amount of /?</p>
 		</div>
 		<form id="answerForm">
 			<input type="text" id="answer" placeholder="Enter your answer here" required>
@@ -171,7 +171,7 @@
 		document.getElementById('answerForm').addEventListener('submit', function(event) {
 			event.preventDefault(); // Prevent form submission
 			var userAnswer = document.getElementById('answer').value.trim();
-			var correctAnswer = 'mac'; // The correct answer
+			var correctAnswer = 'mac///'; // The correct answer
 
 			if (userAnswer == correctAnswer) {
 				// Redirect to next page if correct
