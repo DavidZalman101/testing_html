@@ -7,7 +7,7 @@
 	<style>
 		/* Add a background image to the body */
 		body {
-			background-image: url('chest.jpg'); /* local image*/
+			background-image: url('chest_in_chest.jpg'); /* local image*/
 			background-size: cover; /* Make the background cover the entire page */
 			background-position: center; /* Center the background image */
 			background-attachment: fixed; /* Keep the background fixed while scrolling */
@@ -156,34 +156,28 @@
 <body>
 	<main>
 		<div class="speech-bubble">
-			<p>🐵: hey, what's this underneath the bench?<br><br>
-			It looks like a chest!
+			<p>🐵: papa primate! REALLY?<br>
+			Its like in the last minute you added the extra chest!
 			</p>
 		</div>
 		<br><br>
 		<div class="i-bubble">
 		<p>
-			You found a locked chest on the grass under the bench.<br>
-			Ingraved on the chest:<br>
-			<b>"-Old memories - papa primate"</b>
+			You found a another locked chest inside the first chest, along with a note.<br>
 		</p>
-		<p>
-			And with it a small note, written inside:</p>
 		</div>
 		<br><br>
 		<div class="letter-bubble">
 			<i>
-				The first is the day you arrived to this world<br>
-				The second is the day you arrived to this land<br>
-				The third is the day you agreed to this forever bond<br>
-				<br>
-				Take the first and add it with the second<br>
-				Then multiply the result with the third.<br>
-				<br>
-				Take the left more 4 digits.<br>
-				Now open the secret chest, and hopefully you'll add much more.<br>
-				<br>
-				p.s. Remember your American dates (MM-DD-YY -> MMDDYY)<br>
+			"Turn from the bench, let your gaze drift,
+			To a guardian of knowledge, solid and stiff.
+			A towering form, both numbers and letters,
+			Standing through time, through fair and foul weather.
+				
+			Its cold, gray hands hold secrets untold,
+			In symbols and signs, both ancient and bold.
+			If answers you seek, then look and see,
+			Beneath the fourth, the key shall be."
 			</i>
 		</div>
 
@@ -202,11 +196,11 @@
 		document.getElementById('answerForm').addEventListener('submit', function(event) {
 			event.preventDefault(); // Prevent form submission
 			var userAnswer = document.getElementById('answer').value.trim();
-            var Main_answer = '7853';
+            var Main_answer = 'memories';
 
 			if (userAnswer == Main_answer) {
 				// Redirect to next page if correct
-				window.location.href = 'puzzle9.html';
+				window.location.href = 'last_page.html';
 			} else {
 				// show error message
 				document.getElementById('errorMessage').style.display = 'block';
