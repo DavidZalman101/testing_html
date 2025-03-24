@@ -6,229 +6,72 @@
 	<meta name="description" content="Ripped map">
 </head>
 <body>
-/**<br>
-  main<br>
- */<br>
-import java.util.Random;<br>
-<br>
-public class Main {<br>
-    public static void main(String[] args) {<br>
-            System.out.println("Welcome, let's test your code");<br>
-<br>
-             // Create a new linked list<br>
-             LinkedList list1 = new LinkedList();<br>
-             LinkedList list2 = new LinkedList();<br>
-             <br>
-             // Append nodes to the list1<br>
-             for (int i = 0; i < 10; i++) {<br>
-                 list1.append(5);<br>
-             }<br>
-     <br>
-             // Append nodes to the list2<br>
-             for (int i = 0; i < 5; i++) {<br>
-                 list2.append(5);<br>
-             }<br>
-     <br>
-             // Find the nine-th node from list1<br>
-             Node secret_node = list1.getNinthNode();<br>
-     <br>
-             // Append the secret node to list2<br>
-             list2.appendNode(secret_node);<br>
-     <br>
-             Node cobis_node = solve(list1, list2);<br>
-     <br>
-             if (secret_node == cobis_node)<br>
-             {<br>
-                 System.out.println("Good Job Big Brain");<br>
-             }<br>
-             else<br>
-             {<br>
-                 System.out.println("try again stupid pppopo!");<br>
-             }<br>
-         }<br>
-         public static Node solve(LinkedList list1, LinkedList list2)<br>
-         {<br>
-             // COBI NEEDS TO COMPLETE THIS METHOD<br>
-             /*<br>
-              *  list1 and list2 are both LinkedLists, can read about them <br>
-              * in their .java files... dont have to <br>
-              * <br>
-              * <br>
-              * Mission: Find and return the node with list1 and list2 meet<br>
-              * <br>
-              */<br>
-            //return null;<br>
-            <br>
-            //i want to find where the combine, if one list bigger than other, definitely not the "extra"<br>
-<br>
-            //how to check size? use for loop and make a counter? not efficient. start from head<br>
-            <br>
-            int counter1 = 0; //to get length of list<br>
-            int counter2 = 0; //to get length of list<br>
-<br>
-            Node current1 = list1.head; // need start of the lists but how dafuq<br>
-            while(current1 != null){    //if the list isnt empty<br>
-                current1 = current1.getNext();     //move along and ocunt them up<br>
-                counter1++;<br>
-            }<br>
-<br>
-            Node current2 = list2.head; // need start of the lists but how dafuq<br>
-            while(current2 != null){     //if the list isnt empty<br>
-                current2 = current2.getNext();  <br>
-                counter2++;              //move along and ocunt them up<br>
-            }<br>
-<br>
-            int diff = Math.abs(counter1 - counter2); <br>
-            <br>
-            Node itrL= null;<br>
-            Node itrS = null;<br>
-            //find the longer list and move along the diff from it<br>
-            <br>
-            if(counter1 < counter2){  //list2 longer<br>
-                //loop ahead diff amoutn of nodes?<br>
-                itrL = list2.head;<br>
-                itrS = list1.head;<br>
-                <br>
-            } else if(counter1 > counter2){ // list1 longer<br>
-                itrL = list1.head;<br>
-                itrS = list2.head;<br>
-               <br>
-            }<br>
-            else{ //lists same length<br>
-                itrL = list2.head;<br>
-                itrS = list1.head;<br>
-            }<br>
-            for(int i = 0; i < diff ; i++){ <br>
-                itrL = itrL.getNext();<br>
-            }<br>
-            //now compare each address? another while loop? (while cause idk the expected length?)<br>
-            //"index" of linked list - placement <br>
-            while(itrL != itrS){<br>
-                itrS = itrS.getNext();<br>
-                itrL = itrL.getNext();<br>
-            }<br>
-            return itrS;<br>
-         }<br>
-<br>
-         //make a new list using Random<br>
-         public static LinkedList createList(Node chainLen){<br>
-            Random rnd = new Random();<br>
-            Node list = new Node(0); //decide lenght<br>
-            Node prev, next;<br>
-            prev = list;<br>
-            //create new and make another length amount<br>
-            for(int i =0; i < chainLen; i++){<br>
-                //put the new link at the end each time<br>
-                next = new Node(i);<br>
-                prev.setNext(next);<br>
-                prev = next; // update new end<br>
-            }<br>
-<br>
-         }<br>
-}<br>
-<br>
-/*****************************************************************************************/<br>
-//PRACTICE-> returns lowest VALUE in the array<br>
-public static int min(int [] a){<br>
-    //send to method to find lowest<br>
-    return min(a, 0); //need a ptr for the idx ->set which idx is sent from here<br>
-    // a[idx] means return value of whats is array in cell idx<br>
-}<br>
-//sends to private to recursively go through each sub array<br>
-private static int min(int [] a, int idx){ //compare curr to next -> smaller<br>
-    //stopping condition -> end/past end<br>
-    if(idx == a.length-1){ //if we made it to the last one, must be min<br>
-        return a[idx];<br>
-    }<br>
-    //current case -> check list<br>
-    int restMin = min(a,idx+1); //call to move along<br>
-    if(a[idx] < restMin){<br>
-        //if holds, rest and compare again<br>
-        return a[idx]; // we found the min<br>
-    }<br>
-    //otherwise the restMin has the min?<br>
-    //recursive call to check the rest of the array<br>
-    return restMin; <br>
-}<br>
-/*****************************************************************************************/<br>
-//PRACTICE-> returns INDEX of lowest value in the array<br>
-public static int minIdx(int [] a){<br>
-    return minIdx(a, 0); //send array and starting index<br>
-}<br>
-//sends to private to recursively go through each sub array<br>
-private static int minIdx(int []a , int idx){<br>
-    //default -> only one cell -> tis lowest <br>
-    if(idx == a.length-1){<br>
-        //were reduced to this case or its the last cell?<br>
-        //we want to return the CELL not value -> return just idx <br>
-        return idx;<br>
-    }<br>
-    //check lowest value again -> or its here or in the rest<br>
-    //recursive caller<br>
-    int inRest = minIdx(a, idx+1); // move to next idx and from thta sub array<br>
-    //this or rest<br>
-    if(a[idx] < inRest){<br>
-        return idx; // found min, its here, return this current idx<br>
-    }<br>
-    //else its in the rest so resend all this starting from the rest<br>
-    return inRest;<br>
- }<br>
-/*****************************************************************************************/<br>
- //PRACTICE-> makes an array into a string (with spaces between each letter)<br>
- public static String arrToString(int [] a){<br>
-    //send to private with params -> array, idx, string to add to?<br>
-    return arrToString(a, 0, "");<br>
- }<br>
- private static String arrToString(int []a , int idx, String st){<br>
-    //default case empty or one cell? -> maneuvering with idx<br>
-    if(idx == a.length-1){ //if is empty or only one, make that cell content to be the string<br>
-        return st + a[idx]; // does this add the content to a string?<br>
-    }<br>
-    // rest of the array? go in order? move along now or after?<br>
-    int restArr = arrToString(a, idx + 1, st + a[idx]); //add to string too? or did i double somehting here?<br>
-    //add together<br>
-    //wait this is done no?<br>
-    return a[idx] + " " + restArr;<br>
- }<br>
- /*****************************************************************************************/<br>
- //PRACTICE-> returns a string of the content of the array in REVERSE order<br>
- //ideas->start from a.length-1 and reduce? then it would return then baclwards? -> lets try<br>
- public static String reversed(int [] a){<br>
-    //send with params of array and idx from the end<br>
-    return reversed(a, a.length-1); <br>
- }<br>
- private static String reversed(int []a, int idx){<br>
-    //default-> shortest case just return it<br>
-    if(idx == 0){ //zero cause were going other way?<br>
-        return a[idx] + " ";<br>
-    }<br>
-    //recursive move -> what we want to repeat on<br>
-    String back = reversed(a, idx - 1);<br>
-    //we're done -> return this<br>
-    return back + " " + a[idx]; //return what we got<br>
- }<br>
- /*****************************************************************************************/<br>
- //PRACTICE-> check if given array is a palindrome -> check 1st and last match and move inwards<br>
- public static boolean isPalindrome(int [] a){<br>
-    //send with two idx-> beginning and end <br>
-    return isPalidrome(a, 0, a.length-1);<br>
- }                                                                            <br>
- private static boolean isPalindrome(int [] a, int left, int right){<br>
-    //if 0 or 1 long -> return true?<br>
-    if(a.length-1 == 1){<br>
-        return true;<br>
-    }<br>
-    //part to check if they match <br>
-    if(left = right){ //one equal since checking value not address<br>
-        //recursively call to keep checking -> go inward<br>
-        return isPalindrome(a, left +1, right -1);<br>
-    }<br>
-    // else not -> bad return false;<br>
-    return false;<br>
- }<br>
- <p>
 
+public class JavaProgrma {
 
-</p>
+// Function 1: finds the first row and column
+public static void first_row_and_column() {
+	int row = 1;
+	int row = 1;
+	System.out_println("the row value is: " + row);
+	System.out_println("the col value is: " + col);
+}
+
+// Function  2: finds the second row and column
+public static void second_row_and_column() {
+	int row = 0;
+	int col = 0;
+
+	for (int i = 1; i <= 11; i++)
+		row = row + 1;
+	
+	int n = 50;
+
+	while (n > 0) {
+		col = col + 1;
+	}
+
+	System.out_println("the row value is: " + row);
+	System.out_println("the col value is: " + col);
+}
+
+// Function 3: finds the third row and column
+public static void third_row_and_column() {
+	int row = 0;
+	int col = 0;
+
+	// complex math :(
+	// or is it?
+	row = ((432432 - 1) * 0) + 2;
+	col = row / 2;
+	row = row * 10;
+
+	System.out_println("the row value is: " + row);
+	System.out_println("the col value is: " + col);
+}
+
+// Function 4: finds the third row and column
+public static void forth_row_and_column() {
+	int row = 0;
+	int col = 0;
+
+	int[] numbers = {21, 321, 5342, 1, 3333, 106};
+
+	// sort the array
+	Arrays.sort(numbers);
+	row = numbers[1];
+	col = numbers[2];
+
+	System.out_println("the row value is: " + row);
+	System.out_println("the col value is: " + col);
+}
+
+// main function - you can ignore it
+public static void main(String[] args)
+{
+	return;
+}
+}
+
 </body>
 </html>
