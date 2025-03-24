@@ -75,6 +75,22 @@
 			text-align: left;
 		}
 
+		.black-bubble {
+			max-width: 400px;
+			background: #000000;
+			padding: 15px;
+			border-radius: 10px;
+			border: 2px solid #ccc;
+			position: relative;
+			font-family: serif;
+			font-size: 16px;
+			line-height: 1.5;
+			box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+			text-align: left;
+		}
+
+
+
         .button-container {
             display: flex;
             flex-direction: column; /* Stack buttons vertically */
@@ -121,8 +137,10 @@
 		<br>
 		<br>
 	</p>
+		<div id="black-bubble">
 			<p class="old-pc-font">Insert Username and Password:
 		</p>
+		</div>
 
 		<form id="answerForm">
 			<input type="text" id="answer" placeholder="Enter username here" required>
