@@ -150,6 +150,15 @@
 	<audio id="bgMusic" src="pp_pc_boot.mp3" autoplay></dudio>
 
 	<script>
+	    window.addEventListener("load", function () {
+	        let sound = new Audio("pp_pc_boot.mp3");
+	        sound.play().catch(error => console.log("Autoplay blocked:", error));
+	    });
+	</script>
+
+
+	<script>
+
 		// JaveScript for answer checking
 		document.getElementById('answerForm2').addEventListener('submit', function(event) {
 			event.preventDefault(); // Prevent form submission
