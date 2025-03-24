@@ -103,6 +103,20 @@
 			text-align: left;
 		}
 
+		.i-bubble {
+			max-width: 400px;
+			background: #ffffff;
+			padding: 15px;
+			border-radius: 10px;
+			border: 2px solid #ccc;
+			position: relative;
+			font-family: serif;
+			font-size: 16px;
+			line-height: 1.5;
+			box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+			text-align: left;
+		}
+
 
 
         .button-container {
@@ -148,12 +162,32 @@
 		</div>
 		<div class="i-bubble">
 		<p>
-			You found a chest on the grass under the bench.<br>
+			You found a locked chest on the grass under the bench.<br>
 			Ingraved on the chest:<br>
 			<b>"-Old memories<br>
-			papa primate"</b><br>
+			papa primate"</b><br><br>
 		</p>
+
+		<p>
+			And with it a small note, written inside:<br><br></p>
 		</div>
+
+		<div class="letter-bubble">
+			<i>
+				The first is the day you arrived to this world<br>
+				The second is the day you arrived to this land<br>
+				The third is the day you agreed to this forever bond<br>
+				<br>
+				Take the first and add it with the second<br>
+				Then multiply the result with the third.<br>
+				<br>
+				Take the left more 4 digits.<br>
+				Now open the secret chest, and hopefully you'll add much more.<br>
+				<br>
+				p.s. Remember your American dates (MM-DD-YY -> MMDDYY)<br>
+			</i>
+		</div>
+
 
 		<form id="answerForm">
 			<input type="text" id="answer" placeholder="Enter answer" required>
@@ -168,8 +202,8 @@
 		// JaveScript for answer checking
 		document.getElementById('answerForm').addEventListener('submit', function(event) {
 			event.preventDefault(); // Prevent form submission
-			var userAnswer = document.getElementById('answer').value.toLowerCase().trim();
-            var Main_answer = 'ewq';
+			var userAnswer = document.getElementById('answer').value..trim();
+            var Main_answer = '7853';
 
 			if (userAnswer == Main_answer) {
 				// Redirect to next page if correct
