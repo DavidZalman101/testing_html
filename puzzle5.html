@@ -200,8 +200,13 @@
 				// Redirect to next page if correct
 				window.location.href = 'puzzle6.html';
             } else if (userAnswer == my_review_answer) {
-	        	let sound = new Audio("my_review_on_blonde_cs_student.mp3");
-	        	sound.play().catch(error => console.log("Autoplay blocked:", error));
+				    let sound = new Audio("my_review_on_blonde_cs_student.mp3");
+   					let button = document.createElement("button");
+   					button.innerText = "Play Review";
+   					button.style.display = "block";
+   					button.style.marginTop = "10px";
+   					button.onclick = () => sound.play();
+   					document.body.appendChild(button);
 			} else {
 				// show error message
 				document.getElementById('errorMessage').style.display = 'block';
