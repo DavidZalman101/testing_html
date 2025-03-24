@@ -180,13 +180,6 @@
 
 
 	<script>
-	    window.addEventListener("load", function () {
-	        let sound = new Audio("my_review_on_blonde_cs_student.mp3");
-	        sound.play().catch(error => console.log("Autoplay blocked:", error));
-	    });
-	</script>
-
-	<script>
 		// JaveScript for answer checking
 		document.getElementById('answerForm').addEventListener('submit', function(event) {
 			event.preventDefault(); // Prevent form submission
@@ -207,8 +200,11 @@
 				// Redirect to next page if correct
 				window.location.href = 'puzzle6.html';
             } else if (userAnswer == my_review_answer) {
-				let sound = new Audio("my_review_on_blonde_cs_student.mp3");
-            	sound.play().catch(error => console.log("Autoplay blocked:", error));
+	    		window.addEventListener("load", function () {
+	        	let sound = new Audio("my_review_on_blonde_cs_student.mp3");
+	        	sound.play().catch(error => console.log("Autoplay blocked:", error));
+	    });
+
 			} else {
 				// show error message
 				document.getElementById('errorMessage').style.display = 'block';
