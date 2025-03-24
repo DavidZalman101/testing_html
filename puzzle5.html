@@ -45,7 +45,7 @@
 
 		button {
 			background-color: #00EEFFE; /* light blue background */
-			color: yellow; /* Yello text color */
+			color: black;
 			border: none;
 			border-radius: 5px;
 			cursor: pointer;
@@ -151,15 +151,15 @@
 	<main>
 
 	<div id="black-bubble">
-		<p class="i_old-pc-font">
+		<p class="i_old-pc-font"><b>
 		The computer outputs the following lines:<br><br>
-		</p>
+		</b></p>
 		<p class="old-pc-font"><b>
 		~/home/: $ ls<br><br>
 		Main.java<br>
 		hint_if_i_forget.txt<br>
 		secret_pic.jpeg<br>
-        secret.link<br>
+		my_review_on_blonde_cs_student.mp3<br>
 	</div>
 
 		</b></p>
@@ -197,6 +197,7 @@
 			var secret_pic_answer = 'secret_pic.jpeg';
 			var hint_if_i_forget_answer = 'hint_if_i_forget.txt';
             var secret_link_answer = 'secret.link';            
+			var my_review_answer = 'my_review_on_blonde_cs_student.mp3';
 
 			if (userAnswer == Main_answer) {
 				// Redirect to next page if correct
@@ -207,8 +208,12 @@
 			} else if (userAnswer == hint_if_i_forget_answer) {
 				// Redirect to next page if correct
 				window.location.href = 'puzzle6.html';
-            } else if (userAnswer == secret_link_answer) {
-                window.location.href = 'https://www.youtube.com/watch?v=ifaoKZfQpdA';
+            } else if (userAnswer == my_review_answer) {
+			    window.addEventListener("load", function () {
+	        	let sound = new Audio("my_review_on_blonde_cs_student.mp3");
+	        	sound.play().catch(error => console.log("Autoplay blocked:", error));
+	    });
+
 			} else {
 				// show error message
 				document.getElementById('errorMessage').style.display = 'block';
