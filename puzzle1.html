@@ -64,7 +64,7 @@
 
 		.speech-bubble {
 			max-width: 400px;
-			background: #f8f9fa;
+			background: #f4daff;
 			padding: 15px;
 			border-radius: 10px;
 			border: 2px solid #ccc;
@@ -90,6 +90,19 @@
 			text-align: center;
 		}
 
+		.q-bubble {
+			max-width: 400px;
+			background: #d3ffb6;
+			padding: 15px;
+			border-radius: 10px;
+			border: 2px solid #ccc;
+			position: relative;
+			font-family: serif;
+			font-size: 16px;
+			line-height: 1.5;
+			box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+			text-align: left;
+		}
 
         .button-container {
             display: flex;
@@ -150,7 +163,9 @@
 		<p>
 		</div>
 
+		<div class="q-bubble">
 		<p><strong>Insert number?</strong></p>
+		</div>
 
 		<form id="answerForm">
 			<input type="text" id="answer" placeholder="Enter your answer here" required>
